@@ -143,7 +143,10 @@ export const EXPERIENCES = [
       "Witness the intricate art of Muga silk weaving",
       "Interact with master weavers in their homes",
       "Try your hand at the traditional loom"
-    ]
+    ],
+    crowdLevel: 'low',
+    bestTimeToVisit: 'Early morning (7-10 AM)',
+    infoUrl: 'https://en.wikipedia.org/wiki/Sualkuchi'
   },
   {
     id: 'e2',
@@ -169,7 +172,10 @@ export const EXPERIENCES = [
       "Guided sunset walk around Nilachal Hill",
       "Visit hidden ancient shrines",
       "Panoramic views of Guwahati city"
-    ]
+    ],
+    crowdLevel: 'high',
+    bestTimeToVisit: 'Weekday evenings',
+    infoUrl: 'https://en.wikipedia.org/wiki/Kamakhya_Temple'
   },
   {
     id: 'e3',
@@ -195,7 +201,10 @@ export const EXPERIENCES = [
       "Scenic ferry ride across the Brahmaputra",
       "Explore the smallest inhabited river island",
       "Chance to spot Golden Langurs"
-    ]
+    ],
+    crowdLevel: 'moderate',
+    bestTimeToVisit: 'Morning (8-11 AM)',
+    infoUrl: 'https://en.wikipedia.org/wiki/Umananda_Temple'
   },
   {
     id: 'e4',
@@ -221,7 +230,10 @@ export const EXPERIENCES = [
       "Taste 5 premium Assam tea varieties",
       "Learn the art of tea tasting from a master",
       "Understand the journey from leaf to cup"
-    ]
+    ],
+    crowdLevel: 'low',
+    bestTimeToVisit: 'Afternoon (2-5 PM)',
+    infoUrl: 'https://en.wikipedia.org/wiki/Assam_tea'
   },
   {
     id: 'e5',
@@ -247,7 +259,10 @@ export const EXPERIENCES = [
       "Hands-on experience with the potter's wheel",
       "Create your own clay artifact",
       "Learn about traditional Assamese pottery"
-    ]
+    ],
+    crowdLevel: 'low',
+    bestTimeToVisit: 'Afternoon (1-4 PM)',
+    infoUrl: 'https://en.wikipedia.org/wiki/Pottery_of_Assam'
   },
   {
     id: 'e6',
@@ -266,7 +281,10 @@ export const EXPERIENCES = [
       "Cruising on the majestic Brahmaputra",
       "Enjoy live folk music and dance",
       "Delicious buffet dinner with local cuisine"
-    ]
+    ],
+    crowdLevel: 'moderate',
+    bestTimeToVisit: 'Weekdays',
+    infoUrl: 'https://en.wikipedia.org/wiki/Brahmaputra_River'
   },
   {
     id: 'e7',
@@ -287,7 +305,10 @@ export const EXPERIENCES = [
       "Taste 15+ authentic Assamese dishes",
       "Learn about indigenous ingredients",
       "Experience traditional dining etiquette"
-    ]
+    ],
+    crowdLevel: 'moderate',
+    bestTimeToVisit: 'Lunch time (12-2 PM)',
+    infoUrl: 'https://en.wikipedia.org/wiki/Assamese_cuisine'
   },
   {
     id: 'e8',
@@ -310,7 +331,10 @@ export const EXPERIENCES = [
       "Boat ride in a permanent freshwater lake",
       "Spot rare migratory birds",
       "Learn about the wetland ecosystem"
-    ]
+    ],
+    crowdLevel: 'low',
+    bestTimeToVisit: 'Early morning (5-8 AM)',
+    infoUrl: 'https://en.wikipedia.org/wiki/Deepor_Beel'
   },
   {
     id: 'e9',
@@ -329,10 +353,13 @@ export const EXPERIENCES = [
       { original: 'Muga', translated: 'Golden Silk', pronunciation: 'mu-ga' }
     ],
     highlights: [
-      "Observe the complete lifecycle of Muga silkworm",
-      "See the extraction of golden silk thread",
-      "Visit a rearing farm"
-    ]
+      "Witness the full lifecycle of Muga silkworms",
+      "Learn about Assam's golden silk heritage",
+      "Interactive session with sericulture experts"
+    ],
+    crowdLevel: 'low',
+    bestTimeToVisit: 'Morning (9 AM-12 PM)',
+    infoUrl: 'https://en.wikipedia.org/wiki/Muga_silk'
   },
 
   {
@@ -352,10 +379,13 @@ export const EXPERIENCES = [
       { original: 'Graha', translated: 'Planet', pronunciation: 'gra-ha' }
     ],
     highlights: [
-      "Explore the ancient Navagraha Temple",
-      "Learn about Vedic astrology and history",
-      "Enjoy views from Chitrachal Hill"
-    ]
+      "Visit all 9 Navagraha temples in one day",
+      "Learn about ancient astronomical knowledge",
+      "Experience unique temple architecture"
+    ],
+    crowdLevel: 'moderate',
+    bestTimeToVisit: 'Early morning start (6 AM)',
+    infoUrl: 'https://en.wikipedia.org/wiki/Navagraha_Temple,_Guwahati'
   },
   {
     id: 'e12',
@@ -374,9 +404,12 @@ export const EXPERIENCES = [
       { original: 'Beli', translated: 'Sun', pronunciation: 'be-li' }
     ],
     highlights: [
-      "Capture the perfect sunset shot",
-      "Learn composition and lighting techniques",
-      "Explore riverfront locations"
-    ]
+      "Capture golden hour over Brahmaputra",
+      "Learn river photography techniques",
+      "Sunset cruise included"
+    ],
+    crowdLevel: 'moderate',
+    bestTimeToVisit: 'Late afternoon (4-6 PM)',
+    infoUrl: 'https://en.wikipedia.org/wiki/Brahmaputra_River'
   }
 ];

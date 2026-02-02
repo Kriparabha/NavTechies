@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { EXPERIENCES, VENDORS } from '../data/mockData';
-import { ArrowLeft, MapPin, Clock, Star, MessageCircle, ShieldCheck, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, MapPin, Clock, Star, Languages, ShieldCheck, Phone, Mail, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ExperienceDetail = () => {
@@ -55,7 +55,139 @@ const ExperienceDetail = () => {
                             <span style={{ fontSize: '0.9rem', fontWeight: '500' }}>{vendor.rating} ({vendor.reviews} reviews)</span>
                         </div>
                     </div>
+
+                    {/* Book Now Button in Vendor Card */}
+                    <button
+                        onClick={() => {
+                            setShowBooking(true);
+                            // Scroll to booking section
+                            setTimeout(() => {
+                                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                            }, 100);
+                        }}
+                        style={{
+                            width: '100%',
+                            padding: '12px',
+                            marginTop: '1rem',
+                            background: 'hsl(var(--color-primary))',
+                            color: '#fff',
+                            border: 'none',
+                            borderRadius: 'var(--radius-md)',
+                            fontSize: '1rem',
+                            fontWeight: '600',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
+                        onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                    >
+                        Book Now
+                    </button>
                 </div>
+
+                {/* Language/Phrases Button - Separate Card */}
+                <div className="glass-panel" style={{ padding: '0.75rem 1rem', marginBottom: '1.5rem' }}>
+                    <button
+                        onClick={() => setShowLanguageHelper(true)}
+                        style={{
+                            width: '100%',
+                            padding: '10px',
+                            background: 'transparent',
+                            color: 'hsl(var(--color-text-main))',
+                            border: 'none',
+                            borderRadius: 'var(--radius-md)',
+                            fontSize: '0.95rem',
+                            fontWeight: '600',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '8px'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = 'hsl(var(--color-bg-main))'}
+                        onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+                    >
+                        <Languages size={20} />
+                        Common Phrases
+                    </button>
+                </div>
+
+                {/* Footfall Indicator */}
+                {experience.crowdLevel && (
+                    <div style={{ marginBottom: '1.5rem' }}>
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            padding: '10px 14px',
+                            borderRadius: 'var(--radius-md)',
+                            background: `${experience.crowdLevel === 'low' ? '#10b981' :
+                                experience.crowdLevel === 'moderate' ? '#f59e0b' :
+                                    '#ef4444'
+                                }15`,
+                            width: 'fit-content'
+                        }}>
+                            <div style={{
+                                width: '10px',
+                                height: '10px',
+                                borderRadius: '50%',
+                                background: experience.crowdLevel === 'low' ? '#10b981' :
+                                    experience.crowdLevel === 'moderate' ? '#f59e0b' :
+                                        '#ef4444'
+                            }}></div>
+                            <span style={{
+                                fontSize: '0.9rem',
+                                fontWeight: '600',
+                                color: experience.crowdLevel === 'low' ? '#10b981' :
+                                    experience.crowdLevel === 'moderate' ? '#f59e0b' :
+                                        '#ef4444'
+                            }}>
+                                {experience.crowdLevel === 'low' ? 'Best time to visit' :
+                                    experience.crowdLevel === 'moderate' ? 'Moderate crowd' :
+                                        'High crowd'}
+                            </span>
+                            <span style={{
+                                fontSize: '0.85rem',
+                                color: 'hsl(var(--color-text-muted))',
+                                marginLeft: '4px'
+                            }}>
+                                • {experience.bestTimeToVisit}
+                            </span>
+                        </div>
+                    </div>
+                )}
+
+                {/* Learn More Button */}
+                {experience.infoUrl && (
+                    <div style={{ marginBottom: '1.5rem' }}>
+                        <a
+                            href={experience.infoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                padding: '10px 16px',
+                                borderRadius: 'var(--radius-md)',
+                                background: 'hsl(var(--color-primary))',
+                                color: '#fff',
+                                textDecoration: 'none',
+                                fontSize: '0.9rem',
+                                fontWeight: '600',
+                                transition: 'all 0.2s ease',
+                                border: 'none',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
+                            onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                        >
+                            <ExternalLink size={18} />
+                            Learn More
+                        </a>
+                    </div>
+                )}
 
                 <div style={{ marginBottom: '1.5rem' }}>
                     <h4 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '0.5rem' }}>About the Host</h4>
@@ -108,35 +240,7 @@ const ExperienceDetail = () => {
                     </div>
                 </div>
 
-                {/* Language Helper FAB */}
-                {/* Language Helper FAB - Always visible now */}
-                <div style={{ position: 'fixed', bottom: '90px', right: '20px', zIndex: 10 }}>
-                    <button
-                        onClick={() => setShowLanguageHelper(true)}
-                        className="btn-primary"
-                        style={{ borderRadius: '50%', width: '56px', height: '56px', padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 20px rgba(0,0,0,0.3)' }}
-                    >
-                        <MessageCircle size={24} />
-                    </button>
-                </div>
             </div>
-
-            {/* Bottom Action Bar */}
-            <div className="glass-panel" style={{
-                position: 'fixed', bottom: '20px', left: '50%', transform: 'translateX(-50%)',
-                width: 'calc(100% - 2rem)', maxWidth: '580px', padding: '1rem',
-                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                backdropFilter: 'blur(16px)', background: 'hsl(var(--color-bg-glass))', zIndex: 5
-            }}>
-                <div>
-                    <p style={{ fontSize: '0.8rem', color: 'hsl(var(--color-text-muted))' }}>Total Price</p>
-                    <p style={{ fontSize: '1.2rem', fontWeight: '700' }}>₹{experience.price}</p>
-                </div>
-                <button onClick={() => setShowBooking(true)} className="btn-primary" style={{ padding: '0.75rem 2rem' }}>
-                    Instant Book
-                </button>
-            </div>
-
             {/* Language Helper Modal */}
             <AnimatePresence>
                 {showLanguageHelper && (
