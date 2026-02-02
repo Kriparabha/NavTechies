@@ -22,11 +22,9 @@ const Header = ({ activeCategory, onCategoryChange, searchQuery, onSearchChange 
                     >
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                     </button>
-                    <div className="btn-icon">
-                        <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'hsl(var(--color-text-muted))', overflow: 'hidden' }}>
-                            <img src="https://ui-avatars.com/api/?name=User&background=random" alt="Profile" style={{ width: '100%', height: '100%' }} />
-                        </div>
-                    </div>
+                    {/* Auth Buttons */}
+                    <a href="/login" style={{ textDecoration: 'none', color: 'hsl(var(--color-text-main))', fontWeight: '500', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>Sign In</a>
+                    <a href="/signup" style={{ textDecoration: 'none', color: 'hsl(var(--color-primary))', fontWeight: '600', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>Sign Up</a>
                 </div>
             </header>
 
