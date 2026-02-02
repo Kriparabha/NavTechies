@@ -36,6 +36,10 @@ export const VENDORS = [
     rating: 4.8,
     reviews: 124,
     image: sualkuchiWeaving,
+    contact: {
+      phone: "+91 98765 43210",
+      email: "biren.weaver@example.com"
+    }
   },
   {
     id: 'v2',
@@ -47,6 +51,10 @@ export const VENDORS = [
     rating: 4.9,
     reviews: 89,
     image: brahmaputraCruise,
+    contact: {
+      phone: "+91 88776 65544",
+      email: "info@brahmaputratours.com"
+    }
   },
   {
     id: 'v3',
@@ -58,6 +66,10 @@ export const VENDORS = [
     rating: 4.7,
     reviews: 210,
     image: teaGarden,
+    contact: {
+      phone: "+91 77665 54433",
+      email: "connect@silpukhuritea.com"
+    }
   },
   {
     id: 'v4',
@@ -69,6 +81,10 @@ export const VENDORS = [
     rating: 4.6,
     reviews: 340,
     image: kamakhya,
+    contact: {
+      phone: "+91 66554 43322",
+      email: "tours@kamakhya.com"
+    }
   },
   {
     id: 'v5',
@@ -80,6 +96,10 @@ export const VENDORS = [
     rating: 4.9,
     reviews: 45,
     image: thali,
+    contact: {
+      phone: "+91 55443 32211",
+      email: "roopak@authenticassam.com"
+    }
   },
   {
     id: 'v6',
@@ -91,6 +111,10 @@ export const VENDORS = [
     rating: 4.7,
     reviews: 112,
     image: deeporBeel,
+    contact: {
+      phone: "+91 44332 21100",
+      email: "eco@deeporbeel.org"
+    }
   }
 ];
 
@@ -114,6 +138,11 @@ export const EXPERIENCES = [
       { original: 'Namaskar', translated: 'Hello', pronunciation: 'nam-as-kar' },
       { original: 'Rasta kot?', translated: 'Where is the way?', pronunciation: 'ras-ta kot' },
       { original: 'Moi Photo tulibo parune?', translated: 'Can I take a photo?', pronunciation: 'moi photo...' }
+    ],
+    highlights: [
+      "Witness the intricate art of Muga silk weaving",
+      "Interact with master weavers in their homes",
+      "Try your hand at the traditional loom"
     ]
   },
   {
@@ -135,6 +164,11 @@ export const EXPERIENCES = [
       { original: 'Namaskar', translated: 'Hello', pronunciation: 'nam-as-kar' },
       { original: 'Rasta kot?', translated: 'Where is the way?', pronunciation: 'ras-ta kot' },
       { original: 'Moi Photo tulibo parune?', translated: 'Can I take a photo?', pronunciation: 'moi photo...' }
+    ],
+    highlights: [
+      "Guided sunset walk around Nilachal Hill",
+      "Visit hidden ancient shrines",
+      "Panoramic views of Guwahati city"
     ]
   },
   {
@@ -156,6 +190,11 @@ export const EXPERIENCES = [
       { original: 'Namaskar', translated: 'Hello', pronunciation: 'nam-as-kar' },
       { original: 'Rasta kot?', translated: 'Where is the way?', pronunciation: 'ras-ta kot' },
       { original: 'Moi Photo tulibo parune?', translated: 'Can I take a photo?', pronunciation: 'moi photo...' }
+    ],
+    highlights: [
+      "Scenic ferry ride across the Brahmaputra",
+      "Explore the smallest inhabited river island",
+      "Chance to spot Golden Langurs"
     ]
   },
   {
@@ -177,6 +216,11 @@ export const EXPERIENCES = [
       { original: 'Namaskar', translated: 'Hello', pronunciation: 'nam-as-kar' },
       { original: 'Rasta kot?', translated: 'Where is the way?', pronunciation: 'ras-ta kot' },
       { original: 'Moi Photo tulibo parune?', translated: 'Can I take a photo?', pronunciation: 'moi photo...' }
+    ],
+    highlights: [
+      "Taste 5 premium Assam tea varieties",
+      "Learn the art of tea tasting from a master",
+      "Understand the journey from leaf to cup"
     ]
   },
   {
@@ -198,6 +242,11 @@ export const EXPERIENCES = [
       { original: 'Namaskar', translated: 'Hello', pronunciation: 'nam-as-kar' },
       { original: 'Rasta kot?', translated: 'Where is the way?', pronunciation: 'ras-ta kot' },
       { original: 'Moi Photo tulibo parune?', translated: 'Can I take a photo?', pronunciation: 'moi photo...' }
+    ],
+    highlights: [
+      "Hands-on experience with the potter's wheel",
+      "Create your own clay artifact",
+      "Learn about traditional Assamese pottery"
     ]
   },
   {
@@ -212,7 +261,12 @@ export const EXPERIENCES = [
     image: brahmaputraCruise,
     location: { lat: 26.18, lng: 91.73 },
     languages: ['English', 'Hindi'],
-    phrases: []
+    phrases: [],
+    highlights: [
+      "Cruising on the majestic Brahmaputra",
+      "Enjoy live folk music and dance",
+      "Delicious buffet dinner with local cuisine"
+    ]
   },
   {
     id: 'e7',
@@ -228,6 +282,11 @@ export const EXPERIENCES = [
     languages: ['Assamese', 'Hindi', 'English'],
     phrases: [
       { original: 'Bohut swad', translated: 'Very tasty', pronunciation: 'bo-hut swad' }
+    ],
+    highlights: [
+      "Taste 15+ authentic Assamese dishes",
+      "Learn about indigenous ingredients",
+      "Experience traditional dining etiquette"
     ]
   },
   {
@@ -246,6 +305,11 @@ export const EXPERIENCES = [
       { original: 'Namaskar', translated: 'Hello', pronunciation: 'nam-as-kar' },
       { original: 'Charai', translated: 'Bird', pronunciation: 'sa-rai' },
       { original: 'Dhonyobaad', translated: 'Thank you', pronunciation: 'dhon-yo-baad' }
+    ],
+    highlights: [
+      "Boat ride in a permanent freshwater lake",
+      "Spot rare migratory birds",
+      "Learn about the wetland ecosystem"
     ]
   },
   {
@@ -263,25 +327,14 @@ export const EXPERIENCES = [
     phrases: [
       { original: 'Pat', translated: 'Silk', pronunciation: 'pat' },
       { original: 'Muga', translated: 'Golden Silk', pronunciation: 'mu-ga' }
+    ],
+    highlights: [
+      "Observe the complete lifecycle of Muga silkworm",
+      "See the extraction of golden silk thread",
+      "Visit a rearing farm"
     ]
   },
-  {
-    id: 'e10',
-    title: 'Chai & Chaat Walk',
-    vendorId: 'v3',
-    category: 'tea',
-    duration: '60m',
-    price: 300,
-    currency: 'INR',
-    description: 'Evening walk exploring the best local tea stalls and street food snacks.',
-    image: tea,
-    location: { lat: 26.18, lng: 91.75 },
-    languages: ['Hindi', 'English'],
-    phrases: [
-      { original: 'Garam', translated: 'Hot', pronunciation: 'ga-ram' },
-      { original: 'Swad', translated: 'Tasty', pronunciation: 'swad' }
-    ]
-  },
+
   {
     id: 'e11',
     title: 'Navagraha Temple Visit',
@@ -297,6 +350,11 @@ export const EXPERIENCES = [
     phrases: [
       { original: 'Puja', translated: 'Worship', pronunciation: 'pu-ja' },
       { original: 'Graha', translated: 'Planet', pronunciation: 'gra-ha' }
+    ],
+    highlights: [
+      "Explore the ancient Navagraha Temple",
+      "Learn about Vedic astrology and history",
+      "Enjoy views from Chitrachal Hill"
     ]
   },
   {
@@ -314,6 +372,11 @@ export const EXPERIENCES = [
     phrases: [
       { original: 'Nodi', translated: 'River', pronunciation: 'no-di' },
       { original: 'Beli', translated: 'Sun', pronunciation: 'be-li' }
+    ],
+    highlights: [
+      "Capture the perfect sunset shot",
+      "Learn composition and lighting techniques",
+      "Explore riverfront locations"
     ]
   }
 ];

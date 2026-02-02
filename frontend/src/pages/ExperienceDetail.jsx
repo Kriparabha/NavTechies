@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { EXPERIENCES, VENDORS } from '../data/mockData';
-import { ArrowLeft, MapPin, Clock, Star, MessageCircle, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, MapPin, Clock, Star, MessageCircle, ShieldCheck, Phone, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ExperienceDetail = () => {
@@ -59,8 +59,35 @@ const ExperienceDetail = () => {
 
                 <div style={{ marginBottom: '1.5rem' }}>
                     <h4 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '0.5rem' }}>About the Host</h4>
-                    <p style={{ lineHeight: '1.6', color: 'hsl(var(--color-text-muted))' }}>{vendor.bio}</p>
+                    <p style={{ lineHeight: '1.6', color: 'hsl(var(--color-text-muted))', marginBottom: '1rem' }}>{vendor.bio}</p>
+
+                    {vendor.contact && (
+                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                            <a href={`tel:${vendor.contact.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'hsl(var(--color-primary))', textDecoration: 'none', fontSize: '0.9rem', padding: '0.5rem', background: 'hsl(var(--color-bg-card))', borderRadius: 'var(--radius-sm)', border: '1px solid hsl(var(--color-border))' }}>
+                                <Phone size={16} /> {vendor.contact.phone}
+                            </a>
+                            <a href={`mailto:${vendor.contact.email}`} style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'hsl(var(--color-primary))', textDecoration: 'none', fontSize: '0.9rem', padding: '0.5rem', background: 'hsl(var(--color-bg-card))', borderRadius: 'var(--radius-sm)', border: '1px solid hsl(var(--color-border))' }}>
+                                <Mail size={16} /> {vendor.contact.email}
+                            </a>
+                        </div>
+                    )}
                 </div>
+
+                {experience.highlights && experience.highlights.length > 0 && (
+                    <div style={{ marginBottom: '1.5rem' }}>
+                        <h4 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '0.5rem' }}>What to Expect</h4>
+                        <div style={{ background: 'hsl(var(--color-bg-card))', borderRadius: 'var(--radius-md)', padding: '1rem' }}>
+                            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                                {experience.highlights.map((highlight, idx) => (
+                                    <li key={idx} style={{ display: 'flex', alignItems: 'start', gap: '10px', marginBottom: idx !== experience.highlights.length - 1 ? '0.75rem' : 0 }}>
+                                        <div style={{ minWidth: '8px', height: '8px', borderRadius: '50%', background: 'hsl(var(--color-primary))', marginTop: '6px' }}></div>
+                                        <span style={{ lineHeight: '1.4', color: 'hsl(var(--color-text-main))' }}>{highlight}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                )}
 
                 <div style={{ marginBottom: '1.5rem' }}>
                     <h4 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '0.5rem' }}>Meeting Point</h4>

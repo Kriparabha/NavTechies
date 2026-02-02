@@ -47,9 +47,7 @@ const Header = ({ activeCategory, onCategoryChange, searchQuery, onSearchChange 
                         outline: 'none'
                     }}
                 />
-                <div className="btn-icon" style={{ width: '32px', height: '32px' }}>
-                    <Filter size={16} />
-                </div>
+
             </div>
 
             <div style={{ display: 'flex', gap: '1rem', overflowX: 'auto', paddingBottom: '0.5rem', scrollbarWidth: 'none' }}>

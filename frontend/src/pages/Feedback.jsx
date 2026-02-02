@@ -44,7 +44,7 @@ const Feedback = () => {
             <div className="glass-panel" style={{ padding: '1rem', marginBottom: '2rem' }}>
                 <textarea
                     placeholder="Tell us what you liked..."
-                    style={{ width: '100%', minHeight: '100px', background: 'transparent', border: 'none', color: 'white', outline: 'none', resize: 'none', fontSize: '1rem' }}
+                    style={{ width: '100%', minHeight: '100px', background: 'transparent', border: 'none', color: 'hsl(var(--color-text-main))', outline: 'none', resize: 'none', fontSize: '1rem' }}
                 />
             </div>
 
