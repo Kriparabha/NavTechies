@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Default: Premium Dark Palette */
+  --color-bg-main: 220 15% 10%;
+  --color-bg-card: 220 15% 14%;
+  --color-bg-glass: 220 15% 14% / 0.7;
+
+  --color-primary: 38 95% 60%;
+  /* Premium Gold/Orange */
+  --color-primary-glow: 38 95% 60% / 0.3;
+  --color-secondary: 170 50% 55%;
+  /* Relaxed Teal */
+
+  --color-text-main: 220 10% 98%;
+  --color-text-muted: 220 10% 70%;
+  --color-border: 220 10% 25%;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-theme="light"] {
+  /* Premium Light Palette */
+  --color-bg-main: 220 20% 97%;
+  /* Soft Off-White */
+  --color-bg-card: 0 0% 100%;
+  /* Pure White */
+  --color-bg-glass: 0 0% 100% / 0.7;
+
+  --color-primary: 35 90% 55%;
+  /* Slightly darker gold for contrast on white */
+  --color-primary-glow: 35 90% 55% / 0.2;
+  --color-secondary: 170 60% 40%;
+  /* Darker teal */
+
+  --color-text-main: 220 15% 15%;
+  /* Deep Gray/Black */
+  --color-text-muted: 220 10% 45%;
+  /* Mid Gray */
+  --color-border: 220 15% 90%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: hsl(var(--color-bg-main));
+  color: hsl(var(--color-text-main));
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utilities */
+.glass-panel {
+  background: hsl(var(--color-bg-glass));
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--color-border));
+  border-radius: var(--radius-lg);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, hsl(var(--color-primary)), hsl(var(--color-secondary)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background: hsl(var(--color-primary));
+  color: white;
+  /* Always white for contrast on primary button */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+[data-theme="light"] .btn-primary {
+  color: white;
+}
+
+[data-theme="dark"] .btn-primary {
+  color: hsl(var(--color-bg-main));
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-icon {
+  background: hsl(var(--color-bg-card));
+  border: 1px solid hsl(var(--color-border));
+  color: hsl(var(--color-text-main));
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background: hsl(var(--color-border));
+}
+
+.container {
+  max-width: 600px;
+  /* Mobile-first constraint for demo */
+  margin: 0 auto;
+  padding: var(--space-md);
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-enter {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.experiences-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Responsive Desktop Styles */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+    /* Widen container for desktop */
+    padding: var(--space-xl);
+  }
+
+  /* Onboarding Specifics for Desktop */
+  .onboarding-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* Align to top to start, or center */
+    justify-content: space-between;
+    gap: 4rem;
+    min-height: 80vh;
+    /* Use viewport height for better centering */
+    align-items: center;
+  }
+
+  .onboarding-intro {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  .onboarding-intro h1 {
+    font-size: 3.5rem !important;
+    /* Scale up typography */
+  }
+
+  .onboarding-intro p {
+    font-size: 1.2rem !important;
+  }
+
+  .onboarding-form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .onboarding-card {
+    width: 100%;
+    max-width: 450px;
+    /* Requested max-width */
+    padding: 2.5rem !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    /* Enhanced shadow */
+  }
+
+  .experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
