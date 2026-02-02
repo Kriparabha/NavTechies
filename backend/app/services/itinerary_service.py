@@ -4,6 +4,11 @@ from supabase import create_client
 from backend.app.core.config import settings
 import json
 
+# In itinerary_service.py
+from backend.app.utils.geolocation import calculate_distance, get_safe_meeting_points
+
+
+
 
 class ItineraryService:
     def __init__(self):
@@ -11,6 +16,21 @@ class ItineraryService:
             settings.SUPABASE_URL,
             settings.SUPABASE_KEY
         )
+
+    def get_nearby_itineraries(self, lat: float, lng: float, radius_km: float = 5):
+        """Get itineraries within radius"""
+        nearby = []
+        for itinerary in self.itineraries:
+            distance = calculate_distance(
+                (lat, lng),
+                (itinerary["meeting_point"]["lat"], itinerary["meeting_point"]["lng"])
+            )
+            if distance <= radius_km:
+                itinerary["distance_km"] = round(distance, 2)
+                nearby.append(itinerary)
+
+        return sorted(nearby, key=lambda x: x["distance_km"])
+
 
     async def get_itineraries(
             self,
@@ -186,3 +206,4 @@ class ItineraryService:
                 .execute()
 
             return response.data
+
