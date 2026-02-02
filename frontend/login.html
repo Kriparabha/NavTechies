@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guwahati Heritage Experience | Login</title>
+    <style>
+        :root {
+            --primary-blue: #1A73E8; /* Trusted, clean blue */
+            --accent-gold: #FFB74D;  /* Warm heritage gold */
+            --dark-navy: #0D1B2A;
+            --soft-bg: #F8FAFC;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .auth-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark-navy);
+            margin-bottom: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-blue);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 8px 16px rgba(26, 115, 232, 0.3);
+        }
+
+        h2 {
+            color: var(--dark-navy);
+            margin-bottom: 24px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #4A5568;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 12px;
+            outline: none;
+            font-size: 15px;
+            transition: all 0.2s;
+            background: #FDFDFD;
+        }
+
+        input:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.1);
+        }
+
+        .action-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .action-btn:hover {
+            background: #1557B0;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(26, 115, 232, 0.2);
+        }
+
+        .options {
+            margin-top: 24px;
+            font-size: 14px;
+            color: #718096;
+        }
+
+        .options a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .forgot-pw {
+            display: block;
+            margin-top: 14px;
+            font-size: 13px;
+            color: #718096;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-pw:hover { color: var(--primary-blue); }
+
+        .hidden { display: none; }
+
+        /* Animation */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade { animation: slideUp 0.4s ease-out; }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container" id="auth-card">
+        <div class="logo">
+            <div class="logo-icon">G</div>
+            Guwahati Heritage Experience
+        </div>
+
+        <div id="signin-form" class="fade">
+            <h2>Sign In</h2>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="name@example.com">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password">
+            </div>
+            <button class="action-btn">Sign In</button>
+            <a href="#" class="forgot-pw" onclick="toggleForm('forgot')">Forgot Password?</a>
+            <div class="options">
+                New traveler? <a href="#" onclick="toggleForm('signup')">Create Account</a>
+            </div>
+        </div>
+
+        <div id="signup-form" class="hidden fade">
+            <h2>Get Started</h2>
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="John Doe">
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="name@example.com">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="Create a password">
+            </div>
+            <button class="action-btn">Join Experience</button>
+            <div class="options">
+                Already have an account? <a href="#" onclick="toggleForm('signin')">Sign In</a>
+            </div>
+        </div>
+
+        <div id="forgot-form" class="hidden fade">
+            <h2>Reset Password</h2>
+            <p style="font-size: 13px; color: #718096; margin-bottom: 24px; line-height: 1.5;">We'll send a recovery link to your email.</p>
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="name@example.com">
+            </div>
+            <button class="action-btn">Send Recovery Link</button>
+            <div class="options">
+                Nevermind, take me <a href="#" onclick="toggleForm('signin')">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formType) {
+            const forms = ['signin-form', 'signup-form', 'forgot-form'];
+            forms.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(formType + '-form').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
