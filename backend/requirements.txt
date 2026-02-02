@@ -1,1 +1,35 @@
+# Core
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Database & Auth
+supabase==1.1.1
+pyjwt[crypto]==2.8.0  # Modern JWT library
+cryptography==42.0.5  # For hashing
+passlib[bcrypt]==1.7.4
+
+# Data Validation
+pydantic==2.5.0
+pydantic-settings==2.1.0
+email-validator==2.1.0
+
+# Payments
+razorpay==1.3.1
+
+# HTTP Client
+requests==2.31.0
+httpx==0.25.1
+
+# Environment
+python-dotenv==1.0.0
+
+# Utilities
+geopy==2.4.0
+redis==5.0.1
+celery==5.3.4
+
+# Development
+pytest==7.4.3
+pytest-asyncio==0.21.1
 
