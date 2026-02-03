@@ -47,3 +47,66 @@ backend/
 ├── requirements.txt
 ├── Dockerfile
 └── .env
+
+
+```bash
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── LoadingSpinner.jsx
+│   │   │   ├── GradientButton.jsx
+│   │   │   └── Card.jsx
+│   │   ├── layout/
+│   │   │   ├── Layout.jsx
+│   │   │   └── Container.jsx
+│   │   ├── home/
+│   │   │   ├── Hero.jsx
+│   │   │   ├── FeaturedItineraries.jsx
+│   │   │   └── Stats.jsx
+│   │   ├── itineraries/
+│   │   │   ├── ItineraryCard.jsx
+│   │   │   ├── ItineraryFilter.jsx
+│   │   │   └── ItineraryDetail.jsx
+│   │   ├── booking/
+│   │   │   ├── BookingForm.jsx
+│   │   │   ├── BookingCard.jsx
+│   │   │   └── BookingStatus.jsx
+│   │   ├── vendor/
+│   │   │   ├── VendorCard.jsx
+│   │   │   ├── VendorProfile.jsx
+│   │   │   └── OnboardingForm.jsx
+│   │   └── support/
+│   │       ├── Phrasebook.jsx
+│   │       ├── Translator.jsx
+│   │       └── SafetyMap.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Itineraries.jsx
+│   │   ├── Booking.jsx
+│   │   ├── VendorDashboard.jsx
+│   │   ├── Support.jsx
+│   │   └── Login.jsx
+│   ├── services/
+│   │   ├── api.js
+│   │   ├── auth.js
+│   │   └── utils.js
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   └── useApi.js
+│   ├── context/
+│   │   ├── AuthContext.jsx
+│   │   └── BookingContext.jsx
+│   ├── styles/
+│   │   ├── index.css
+│   │   └── animations.css
+│   ├── App.jsx
+│   ├── index.js
+│   └── routes.js
+├── tailwind.config.js
+├── package.json
+└── README.md
+
